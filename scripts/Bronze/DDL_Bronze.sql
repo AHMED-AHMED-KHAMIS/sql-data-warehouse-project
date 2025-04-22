@@ -12,7 +12,6 @@ Script Purpose:
 
  # -- This logic is saying if you find a table with this name, Drop or delete it
  # -- so we can create a new one 
-
 IF OBJECT_ID('bronze.crm_cust_info','U') IS NOT NULL 
 	DROP TABLE bronze.crm_cust_info;
 
