@@ -17,8 +17,8 @@ cst_id INT,
 cst_key NVARCHAR(50),
 cst_firstname NVARCHAR(50),
 cst_lastname NVARCHAR (50),
-cst_marital_status NVARCHAR(12),
-cst_gndr NVARCHAR(12),
+cst_marital_status NVARCHAR(30),
+cst_gndr NVARCHAR(30),
 cst_create_date DATE,
 dwh_create_date DATETIME2 DEFAULT GETDATE() -- this is a metadata column, used to track when a record was inserted into DWH. 
 );
@@ -29,12 +29,13 @@ IF OBJECT_ID('silver.crm_prd_info','U') IS NOT NULL
 
 CREATE TABLE silver.crm_prd_info(
 prd_id INT,
+category_id NVARCHAR(50),
 prd_key NVARCHAR(50),
 prd_nm NVARCHAR(60),
 prd_cost INT,
-prd_line NVARCHAR(7),
-prd_start_dt DATETIME,
-prd_end_dt DATETIME,
+prd_line NVARCHAR(30),
+prd_start_dt DATE,
+prd_end_dt DATE,
 dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
 
